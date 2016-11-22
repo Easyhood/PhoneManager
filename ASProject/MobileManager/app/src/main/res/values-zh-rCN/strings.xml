@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">手机管家</string>
+    <string name="click_optimization">点击优化</string>
+    <string name="clean_rubbish">垃圾清理</string>
+    <string name="save_electricity">省电管理</string>
+    <string name="rights_manager">权限管理</string>
+    <string name="traffic_monitoring">流量监控</string>
+    <string name="complete">完成</string>
+    <string name="optimization_complete">优化完毕</string>
+</resources>

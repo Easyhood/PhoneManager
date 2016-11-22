@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MobileManager</string>
+    <string name="click_optimization">click optimization</string>
+    <string name="clean_rubbish">clean rubbish</string>
+    <string name="save_electricity">save electricity</string>
+    <string name="rights_manager">rights manager</string>
+    <string name="traffic_monitoring">traffic monitoring</string>
+    <string name="complete">complete</string>
+    <string name="optimization_complete">optimization complete</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
