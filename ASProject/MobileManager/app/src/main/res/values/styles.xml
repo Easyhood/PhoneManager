@@ -13,7 +13,27 @@
         <item name="colorAccent">#FF4081</item>
     </style>
 
+    <style name="RubbishAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/TC_green6</item>
+        <item name="colorPrimaryDark">@color/TC_green8</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
+    <style name="RightsAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/TC_gray2</item>
+        <item name="colorPrimaryDark">@color/TC_gray5</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
     <style name="AppTheme" parent="@style/BaseAppTheme">
+    </style>
+
+    <style name="common_divider_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#d9d9d9</item>
     </style>
 
 </resources>

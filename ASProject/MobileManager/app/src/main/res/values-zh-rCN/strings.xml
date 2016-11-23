@@ -7,4 +7,5 @@
     <string name="traffic_monitoring">流量监控</string>
     <string name="complete">完成</string>
     <string name="optimization_complete">优化完毕</string>
+    <string name="rubbish">垃圾</string>
 </resources>

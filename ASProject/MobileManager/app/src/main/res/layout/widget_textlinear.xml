@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="58dp"
+    android:background="#FFFFFF"
+    android:gravity="center_vertical">
+
+    <View
+        android:id="@+id/widget_divider_top"
+        style="@style/common_divider_line"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/widget_text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:includeFontPadding="false"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:drawablePadding="10dp"
+        android:textColor="@color/C7"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/widget_text_subContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/widget_text_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:drawablePadding="5dp"
+        android:gravity="right|center_vertical"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:drawableRight="@mipmap/ic_folder_right"
+        android:ellipsize="end"
+        android:textColor="@color/C3"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/widget_divider_bottom"
+        style="@style/common_divider_line"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
     private boolean cleanFragmentVisible;
     private TextView tvOpt;
     private RelativeLayout rlFragmentHome;
+    private LinearLayout llFragmentHome;
 
 
     @Override
@@ -49,12 +51,12 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
         FrameLayout cleanFrame = (FrameLayout) findViewById(R.id.clean_fragment);
         rlFragmentHome = (RelativeLayout) findViewById(R.id.rl_fragment_home);
         tvOpt = (TextView) findViewById(R.id.tv_opt);
-
+        llFragmentHome = (LinearLayout) findViewById(R.id.ll_fragment_home);
 
         if (!cleanFragmentVisible){
             cleanFragmentVisible = true;
             tvOpt.setText(R.string.optimization_complete);
-
+            llFragmentHome.setVisibility(View.INVISIBLE);
 
             view.getDrawingRect(GlobalConstant.mTmpRect);
 
@@ -67,6 +69,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
         } else {
             cleanFragmentVisible = false;
             tvOpt.setText(R.string.click_optimization);
+            llFragmentHome.setVisibility(View.VISIBLE);
 
             view.getDrawingRect(GlobalConstant.mTmpRect);
 

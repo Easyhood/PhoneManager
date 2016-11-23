@@ -8,4 +8,65 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="whiteSmoke">#F5F5F5</color>
+
+    <color name="transparent_background">#50000000</color>
+
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="bg_title">#101d23</color>
+    <color name="bg_title2">#121212</color>
+    <color name="min_title">#343434</color>
+    <color name="money">#A6D87D</color>
+    <color name="common_textColor">#494949</color>
+    <color name="C1">#f0f0f0</color>
+    <color name="C3">#cccccc</color>
+    <color name="C4">#999999</color>
+    <color name="C5">#666666</color>
+    <color name="C6">#333333</color>
+    <color name="C7">#000</color>
+    <color name="C20">#fc687c</color>
+    <color name="C21">#ff4d61</color>
+    <color name="C22">#477ed8</color>
+    <color name="C23">#5ccccc</color>
+    <color name="C24">#3bbc9c</color>
+
+    <color name="YELLOW">#FFFA0C</color>
+    <color name="ORANGE">#F2853A</color>
+
+
+    <color name="TC_blue0">#149FE8</color>
+    <color name="TC_blue1">#328DE0</color>
+    <color name="TC_blue2">#77B5E6</color>
+    <color name="TC_blue3">#18DAFD</color>
+    <color name="TC_blue4">#2D34F9</color>
+
+    <color name="TC_gray0">#101010</color>
+    <color name="TC_gray1">#9A9A9A</color>
+    <color name="TC_gray4">#ECEEF3</color>
+    <color name="TC_gray2">#9C9C9C</color>
+    <color name="TC_gray3">#E6E6E6</color>
+    <color name="TC_gray5">#808A87</color>
+
+    <color name="TC_green0">#00FF00</color>
+    <color name="TC_green1">#7FFF00</color>
+    <color name="TC_green2">#3D9140</color>
+    <color name="TC_green3">#00C957</color>
+    <color name="TC_green4">#228B22</color>
+    <color name="TC_green5">#7CFC00</color>
+    <color name="TC_green6">#32CD32</color>
+    <color name="TC_green7">#BDFCC9</color>
+    <color name="TC_green8">#6B8E23</color>
+    <color name="TC_green9">#308014</color>
+
+    <color name="bg">#F9F9F9</color>
+    <color name="bg_read">#F2F2F2</color>
+    <color name="bg_audit_reason">#F1F1F1</color>
+    <color name="devider_line">#d9d9d9</color>
+    <color name="bg_press">#FFCBB2</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
 </resources>
