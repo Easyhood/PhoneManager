@@ -4,10 +4,68 @@
     android:id="@+id/activity_traffic"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.rgk.mobilemanager.ui.activity.TrafficActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="265dp"
+        android:background="@color/primary_dark"
+        android:gravity="center">
+        <RelativeLayout
+            android:id="@+id/rl_traffic_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_month_rest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/month_rest"
+                android:textColor="@color/whiteSmoke"/>
+            <TextView
+                android:id="@+id/tv_rest_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.95"
+                android:textColor="@android:color/white"
+                android:textSize="60dp"
+                android:layout_below="@id/tv_month_rest"/>
+            <TextView
+                android:id="@+id/tv_traffic_unit"
+                android:layout_toRightOf="@id/tv_rest_num"
+                android:paddingTop="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/traffic_gb"
+                android:textColor="@color/whiteSmoke"/>
+            <TextView
+                android:id="@+id/tv_today_used"
+                android:paddingTop="10dp"
+                android:layout_below="@id/tv_rest_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/whiteSmoke"
+                android:text="@string/today_has_been_used"/>
+            <TextView
+                android:id="@+id/tv_today_used_num"
+                android:layout_toRightOf="@id/tv_today_used"
+                android:paddingTop="10dp"
+                android:layout_below="@id/tv_rest_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="120"
+                android:textColor="@color/whiteSmoke"/>
+            <TextView
+                android:id="@+id/tv_today_used_unit"
+                android:layout_toRightOf="@id/tv_today_used_num"
+                android:paddingTop="10dp"
+                android:layout_below="@id/tv_rest_num"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/whiteSmoke"
+                android:text="@string/traffic_mb"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

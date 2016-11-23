@@ -8,4 +8,6 @@
     <string name="complete">完成</string>
     <string name="optimization_complete">优化完毕</string>
     <string name="rubbish">垃圾</string>
+    <string name="month_rest">本月剩余 :</string>
+    <string name="today_has_been_used">今日已用 :</string>
 </resources>

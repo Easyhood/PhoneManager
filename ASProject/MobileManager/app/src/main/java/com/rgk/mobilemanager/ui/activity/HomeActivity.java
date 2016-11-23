@@ -27,6 +27,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
     private TextView tvOpt;
     private RelativeLayout rlFragmentHome;
     private LinearLayout llFragmentHome;
+    private TextView tvHomeCount;
 
 
     @Override
@@ -51,11 +52,13 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
         FrameLayout cleanFrame = (FrameLayout) findViewById(R.id.clean_fragment);
         rlFragmentHome = (RelativeLayout) findViewById(R.id.rl_fragment_home);
         tvOpt = (TextView) findViewById(R.id.tv_opt);
+        tvHomeCount = (TextView) findViewById(R.id.tv_home_count);
         llFragmentHome = (LinearLayout) findViewById(R.id.ll_fragment_home);
 
         if (!cleanFragmentVisible){
             cleanFragmentVisible = true;
             tvOpt.setText(R.string.optimization_complete);
+            tvHomeCount.setText("100");
             llFragmentHome.setVisibility(View.INVISIBLE);
 
             view.getDrawingRect(GlobalConstant.mTmpRect);
@@ -69,6 +72,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
         } else {
             cleanFragmentVisible = false;
             tvOpt.setText(R.string.click_optimization);
+            tvHomeCount.setText("92");
             llFragmentHome.setVisibility(View.VISIBLE);
 
             view.getDrawingRect(GlobalConstant.mTmpRect);

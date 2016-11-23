@@ -14,12 +14,23 @@
         <RelativeLayout
             android:id="@+id/rl_fragment_home_opt"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
             android:gravity="center">
             <TextView
+                android:id="@+id/tv_home_count"
+                android:layout_centerHorizontal="true"
+                android:text="95"
+                android:textSize="80dp"
+                android:textColor="@color/whiteSmoke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
                 android:id="@+id/tv_opt"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tv_home_count"
                 android:text="@string/click_optimization"
-                android:textColor="@drawable/txt_white_black_selector"
+                android:textColor="@color/whiteSmoke"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </RelativeLayout>

@@ -8,6 +8,15 @@
     <string name="complete">complete</string>
     <string name="optimization_complete">optimization complete</string>
     <string name="rubbish">rubbish</string>
+    <string name="month_rest">month rest</string>
+    <string name="today_has_been_used">today has been used :</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Flow measurement unit -->
+    <string name="traffic_b">b</string>
+    <string name="traffic_kb">kb</string>
+    <string name="traffic_mb">MB</string>
+    <string name="traffic_gb">GB</string>
+    <string name="traffic_tb">T</string>
 </resources>

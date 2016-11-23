@@ -4,10 +4,26 @@
     android:id="@+id/activity_rights"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.rgk.mobilemanager.ui.activity.RightsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="365dp"
+        android:background="@color/TC_gray5"
+        android:gravity="center">
+        <RelativeLayout
+            android:id="@+id/rl_Rights_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_rights_manager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rights_manager"
+                android:textSize="20dp"
+                android:textColor="@color/whiteSmoke"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>
