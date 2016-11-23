@@ -11,12 +11,29 @@
         android:layout_height="265dp"
         android:background="@color/primary_dark"
         android:gravity="center">
+
         <RelativeLayout
             android:id="@+id/rl_fragment_home_opt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:gravity="center">
+            android:padding="15dp">
+            <ImageView
+                android:id="@+id/iv_home_pre"
+                android:src="@mipmap/pre"
+                android:layout_alignParentLeft="true"
+                android:paddingTop="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"/>
+            <TextView
+                android:id="@+id/tv_home_pre"
+                android:layout_toRightOf="@id/iv_home_pre"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/optimization"
+                android:textColor="@color/whiteSmoke"
+                android:visibility="invisible"/>
             <TextView
                 android:id="@+id/tv_home_count"
                 android:layout_centerHorizontal="true"
@@ -33,6 +50,7 @@
                 android:textColor="@color/whiteSmoke"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
         </RelativeLayout>
 
     </RelativeLayout>

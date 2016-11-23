@@ -1,10 +1,13 @@
 package com.rgk.mobilemanager.ui.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.rgk.mobilemanager.R;
 import com.rgk.mobilemanager.widget.TextLinear;
@@ -12,16 +15,19 @@ import com.rgk.mobilemanager.widget.TextLinear;
 /**
  * 垃圾清理activity
  */
-public class RubbishActivity extends BaseActivity {
+public class RubbishActivity extends BaseSonActivity {
 
     private static LinearLayout llRubbishActivityAdd;
+    private RelativeLayout rlRubbish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rubbish);
         llRubbishActivityAdd = (LinearLayout) findViewById(R.id.ll_rubbish_activity_add);
+        rlRubbish = (RelativeLayout) findViewById(R.id.rl_rubbish_pre);
         pretView(getApplicationContext());
+        preBack();
     }
 
     public static void pretView(final Context context){
@@ -38,5 +44,16 @@ public class RubbishActivity extends BaseActivity {
                 }
             },350*i);
         }
+    }
+    @Override
+    public void preBack(){
+        rlRubbish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

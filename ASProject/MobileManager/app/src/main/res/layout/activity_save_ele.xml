@@ -5,26 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.rgk.mobilemanager.ui.activity.SaveEleActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="265dp"
-        android:background="@color/TC_green8"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/tv_power_num"
+        android:background="@color/TC_green8">
+        <RelativeLayout
+            android:id="@+id/rl_save_pre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/whiteSmoke"
-            android:text="97"
-            android:textSize="65dp"/>
-        <TextView
-            android:id="@+id/tv_power_percent"
+            android:padding="10dp"
+            android:clickable="true">
+            <ImageView
+                android:id="@+id/iv_save_pre"
+                android:src="@mipmap/pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:id="@+id/tv_save_pre"
+                android:layout_toRightOf="@id/iv_save_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/whiteSmoke"
+                android:text="@string/save_electricity"/>
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv_power_num"
-            android:paddingTop="10dp"
-            android:text="%"
-            android:textColor="@color/whiteSmoke"/>
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/tv_power_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/whiteSmoke"
+                android:text="97"
+                android:textSize="65dp"/>
+            <TextView
+                android:id="@+id/tv_power_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_power_num"
+                android:paddingTop="10dp"
+                android:text="%"
+                android:textColor="@color/whiteSmoke"/>
+        </RelativeLayout>
+
 
     </RelativeLayout>
 

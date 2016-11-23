@@ -8,12 +8,38 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="265dp"
-        android:background="@color/primary_dark"
-        android:gravity="center">
+        android:background="@color/primary_dark">
+        <RelativeLayout
+            android:id="@+id/rl_traffic_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:clickable="true">
+            <ImageView
+                android:id="@+id/iv_traffic_pre"
+                android:src="@mipmap/pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:id="@+id/tv_traffic_pre"
+                android:layout_toRightOf="@id/iv_traffic_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/whiteSmoke"
+                android:text="@string/traffic_monitoring"/>
+        </RelativeLayout>
         <RelativeLayout
             android:id="@+id/rl_traffic_des"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
             <TextView
                 android:id="@+id/tv_month_rest"
                 android:layout_width="wrap_content"

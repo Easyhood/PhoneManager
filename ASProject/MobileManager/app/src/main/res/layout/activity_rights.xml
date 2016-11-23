@@ -8,12 +8,39 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="365dp"
-        android:background="@color/TC_gray5"
-        android:gravity="center">
+        android:background="@color/TC_gray5">
+        <RelativeLayout
+            android:id="@+id/rl_rights_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:clickable="true">
+            <ImageView
+                android:id="@+id/iv_rights_pre"
+                android:src="@mipmap/pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:id="@+id/tv_rights_pre"
+                android:layout_toRightOf="@id/iv_rights_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/whiteSmoke"
+                android:text="@string/rights_manager"/>
+        </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/rl_Rights_des"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
             <TextView
                 android:id="@+id/tv_rights_manager"
                 android:layout_width="wrap_content"

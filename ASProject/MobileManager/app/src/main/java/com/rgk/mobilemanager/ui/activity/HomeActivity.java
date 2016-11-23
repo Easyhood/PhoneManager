@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,6 +29,8 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
     private RelativeLayout rlFragmentHome;
     private LinearLayout llFragmentHome;
     private TextView tvHomeCount;
+    private ImageView ivHomePre;
+    private TextView tvHomePre;
 
 
     @Override
@@ -54,12 +57,16 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
         tvOpt = (TextView) findViewById(R.id.tv_opt);
         tvHomeCount = (TextView) findViewById(R.id.tv_home_count);
         llFragmentHome = (LinearLayout) findViewById(R.id.ll_fragment_home);
+        ivHomePre = (ImageView) findViewById(R.id.iv_home_pre);
+        tvHomePre = (TextView) findViewById(R.id.tv_home_pre);
 
         if (!cleanFragmentVisible){
             cleanFragmentVisible = true;
             tvOpt.setText(R.string.optimization_complete);
             tvHomeCount.setText("100");
             llFragmentHome.setVisibility(View.INVISIBLE);
+            ivHomePre.setVisibility(View.VISIBLE);
+            tvHomePre.setVisibility(View.VISIBLE);
 
             view.getDrawingRect(GlobalConstant.mTmpRect);
 
@@ -74,6 +81,8 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
             tvOpt.setText(R.string.click_optimization);
             tvHomeCount.setText("92");
             llFragmentHome.setVisibility(View.VISIBLE);
+            ivHomePre.setVisibility(View.INVISIBLE);
+            tvHomePre.setVisibility(View.INVISIBLE);
 
             view.getDrawingRect(GlobalConstant.mTmpRect);
 

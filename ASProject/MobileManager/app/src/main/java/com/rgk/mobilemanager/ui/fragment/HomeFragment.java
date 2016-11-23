@@ -55,6 +55,7 @@ public class HomeFragment extends BaseFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(mActivity, RubbishActivity.class);
                 startActivity(intent);
+                mActivity.finish();
             }
         });
         final RelativeLayout homeSave = (RelativeLayout) view.findViewById(R.id.home_save);
@@ -63,6 +64,7 @@ public class HomeFragment extends BaseFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(mActivity, SaveEleActivity.class);
                 startActivity(intent);
+                mActivity.finish();
             }
         });
         final RelativeLayout homeTraffic = (RelativeLayout) view.findViewById(R.id.home_traffic);
@@ -71,6 +73,7 @@ public class HomeFragment extends BaseFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(mActivity, TrafficActivity.class);
                 startActivity(intent);
+                mActivity.finish();
             }
         });
         final RelativeLayout homeRights = (RelativeLayout) view.findViewById(R.id.home_rights);
@@ -79,6 +82,7 @@ public class HomeFragment extends BaseFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(mActivity, RightsActivity.class);
                 startActivity(intent);
+                mActivity.finish();
             }
         });
 

@@ -9,13 +9,40 @@
         android:id="@+id/rl_activity_rubbish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/TC_green8"
-        android:gravity="center"
-        android:padding="30dp">
+        android:background="@color/TC_green8">
+        <RelativeLayout
+            android:id="@+id/rl_rubbish_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:clickable="true">
+            <ImageView
+                android:id="@+id/iv_rubbish_pre"
+                android:src="@mipmap/pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:id="@+id/tv_rubbish_pre"
+                android:layout_toRightOf="@id/iv_rubbish_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/whiteSmoke"
+                android:text="@string/clean_rubbish"/>
+        </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/rl_rubbish_des"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="30dp">
             <TextView
                 android:id="@+id/tv_rubbish_num"
                 android:layout_width="wrap_content"

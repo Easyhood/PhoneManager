@@ -10,4 +10,5 @@
     <string name="rubbish">垃圾</string>
     <string name="month_rest">本月剩余 :</string>
     <string name="today_has_been_used">今日已用 :</string>
+    <string name="optimization">完成</string>
 </resources>
