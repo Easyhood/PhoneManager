@@ -24,10 +24,15 @@ public class RubbishActivity extends BaseSonActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rubbish);
-        llRubbishActivityAdd = (LinearLayout) findViewById(R.id.ll_rubbish_activity_add);
-        rlRubbish = (RelativeLayout) findViewById(R.id.rl_rubbish_pre);
+        initView();
         pretView(getApplicationContext());
         preBack();
+    }
+
+    @Override
+    public void initView() {
+        llRubbishActivityAdd = (LinearLayout) findViewById(R.id.ll_rubbish_activity_add);
+        rlRubbish = (RelativeLayout) findViewById(R.id.rl_rubbish_pre);
     }
 
     public static void pretView(final Context context){
@@ -55,5 +60,10 @@ public class RubbishActivity extends BaseSonActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void initData() {
+
     }
 }

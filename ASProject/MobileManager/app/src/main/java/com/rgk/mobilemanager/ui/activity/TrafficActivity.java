@@ -18,9 +18,15 @@ public class TrafficActivity extends BaseSonActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traffic);
-        rlTrafficPre = (RelativeLayout) findViewById(R.id.rl_traffic_pre);
+        initView();
         preBack();
     }
+
+    @Override
+    public void initView() {
+        rlTrafficPre = (RelativeLayout) findViewById(R.id.rl_traffic_pre);
+    }
+
     @Override
     public void preBack(){
         rlTrafficPre.setOnClickListener(new View.OnClickListener() {
@@ -31,5 +37,10 @@ public class TrafficActivity extends BaseSonActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void initData() {
+
     }
 }

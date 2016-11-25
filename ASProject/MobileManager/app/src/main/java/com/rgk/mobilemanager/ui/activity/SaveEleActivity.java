@@ -18,8 +18,13 @@ public class SaveEleActivity extends BaseSonActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save_ele);
-        rlSavePre = (RelativeLayout) findViewById(R.id.rl_save_pre);
+        initView();
         preBack();
+    }
+
+    @Override
+    public void initView() {
+        rlSavePre = (RelativeLayout) findViewById(R.id.rl_save_pre);
     }
 
     @Override
@@ -32,5 +37,10 @@ public class SaveEleActivity extends BaseSonActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void initData() {
+
     }
 }

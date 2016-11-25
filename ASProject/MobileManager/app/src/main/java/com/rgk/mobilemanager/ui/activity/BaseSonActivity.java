@@ -39,5 +39,18 @@ public abstract class BaseSonActivity extends AppCompatActivity {
         this.finish();
     }
 
+    /**
+     * 初始化布局
+     */
+    public abstract void initView();
+
+    /**
+     *初始化返回布局
+     */
     public abstract void preBack();
+
+    /**
+     * 初始化数据
+     */
+    public abstract void initData();
 }

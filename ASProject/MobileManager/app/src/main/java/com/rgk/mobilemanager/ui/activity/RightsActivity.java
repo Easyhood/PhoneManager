@@ -15,8 +15,13 @@ public class RightsActivity extends BaseSonActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rights);
-        rlRightsPre = (RelativeLayout) findViewById(R.id.rl_rights_pre);
+        initView();
         preBack();
+    }
+
+    @Override
+    public void initView() {
+        rlRightsPre = (RelativeLayout) findViewById(R.id.rl_rights_pre);
     }
 
 
@@ -30,5 +35,10 @@ public class RightsActivity extends BaseSonActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void initData() {
+
     }
 }
