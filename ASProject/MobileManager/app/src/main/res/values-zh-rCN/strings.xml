@@ -11,4 +11,10 @@
     <string name="month_rest">本月剩余 :</string>
     <string name="today_has_been_used">今日已用 :</string>
     <string name="optimization">完成</string>
+    <string name="on_examination">检查中</string>
+    <string name="in_the_optimization">优化中</string>
+    <string name="click_return">点击返回</string>
+    <string name="intelligent_power_saving">智能省电</string>
+    <string name="touch_cleaner">一键卸载</string>
+    <string name="clean_ram">内存清理</string>
 </resources>

@@ -27,11 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.RubbishActivity"
+        <activity android:name=".ui.activity.CleanRamActivity"
             android:theme="@style/RubbishAppTheme"/>
         <activity android:name=".ui.activity.SaveEleActivity"
             android:theme="@style/RubbishAppTheme"/>
-        <activity android:name=".ui.activity.TrafficActivity" />
+        <activity android:name=".ui.activity.TouchCleanActivity" />
         <activity android:name=".ui.activity.RightsActivity"
             android:theme="@style/RightsAppTheme"/>
     </application>

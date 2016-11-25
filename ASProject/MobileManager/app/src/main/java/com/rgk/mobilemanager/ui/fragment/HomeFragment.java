@@ -11,9 +11,9 @@ import android.widget.RelativeLayout;
 import com.rgk.mobilemanager.Listeners.CleanFragmentTouchListener;
 import com.rgk.mobilemanager.R;
 import com.rgk.mobilemanager.ui.activity.RightsActivity;
-import com.rgk.mobilemanager.ui.activity.RubbishActivity;
+import com.rgk.mobilemanager.ui.activity.CleanRamActivity;
 import com.rgk.mobilemanager.ui.activity.SaveEleActivity;
-import com.rgk.mobilemanager.ui.activity.TrafficActivity;
+import com.rgk.mobilemanager.ui.activity.TouchCleanActivity;
 
 /**
  * 主页fragment
@@ -41,7 +41,8 @@ public class HomeFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
        final RelativeLayout rlFragmentHomeOpt = (RelativeLayout) view.findViewById(R.id.rl_fragment_home_opt);
-        rlFragmentHomeOpt.setOnClickListener(new View.OnClickListener(){
+       final RelativeLayout rlTransDes = (RelativeLayout) view.findViewById(R.id.rl_trans_des);
+        rlTransDes.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -49,11 +50,11 @@ public class HomeFragment extends BaseFragment {
                 CleanFragment.pretView(mActivity);
             }
         });
-        final RelativeLayout homeRubbish = (RelativeLayout) view.findViewById(R.id.home_rubbish);
-        homeRubbish.setOnClickListener(new View.OnClickListener() {
+        final RelativeLayout homeRam = (RelativeLayout) view.findViewById(R.id.home_ram);
+        homeRam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mActivity, RubbishActivity.class);
+                Intent intent = new Intent(mActivity, CleanRamActivity.class);
                 startActivity(intent);
                 mActivity.finish();
             }
@@ -67,11 +68,11 @@ public class HomeFragment extends BaseFragment {
                 mActivity.finish();
             }
         });
-        final RelativeLayout homeTraffic = (RelativeLayout) view.findViewById(R.id.home_traffic);
-        homeTraffic.setOnClickListener(new View.OnClickListener() {
+        final RelativeLayout homeTouch = (RelativeLayout) view.findViewById(R.id.home_touch);
+        homeTouch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mActivity, TrafficActivity.class);
+                Intent intent = new Intent(mActivity, TouchCleanActivity.class);
                 startActivity(intent);
                 mActivity.finish();
             }

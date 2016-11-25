@@ -10,14 +10,14 @@ import com.rgk.mobilemanager.R;
 /**
  * 流量监控activity
  */
-public class TrafficActivity extends BaseSonActivity {
+public class TouchCleanActivity extends BaseSonActivity {
 
     private RelativeLayout rlTrafficPre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_traffic);
+        setContentView(R.layout.activity_touch_clean);
         initView();
         preBack();
     }

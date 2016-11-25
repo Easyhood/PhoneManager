@@ -15,7 +15,7 @@ import com.rgk.mobilemanager.widget.TextLinear;
 /**
  * 垃圾清理activity
  */
-public class RubbishActivity extends BaseSonActivity {
+public class CleanRamActivity extends BaseSonActivity {
 
     private static LinearLayout llRubbishActivityAdd;
     private RelativeLayout rlRubbish;
@@ -23,7 +23,7 @@ public class RubbishActivity extends BaseSonActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rubbish);
+        setContentView(R.layout.activity_clean_ram);
         initView();
         pretView(getApplicationContext());
         preBack();
