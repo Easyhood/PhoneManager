@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import com.rgk.mobilemanager.global.GlobalConstant;
 
 /**
- * Description: fragmen上划隐藏与下滑显示动画
+ * Description: fragment上划隐藏与下滑显示动画
  * Copyright  : Copyright (c) 2016
  * Company    : RGK
  * Author     : qi.guan

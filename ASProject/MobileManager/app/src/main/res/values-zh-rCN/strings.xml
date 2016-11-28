@@ -17,4 +17,5 @@
     <string name="intelligent_power_saving">智能省电</string>
     <string name="touch_cleaner">一键卸载</string>
     <string name="clean_ram">内存清理</string>
+    <string name="examination_complete">检查中</string>
 </resources>

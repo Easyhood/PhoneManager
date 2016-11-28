@@ -17,6 +17,7 @@
     <string name="intelligent_power_saving">intelligent power saving</string>
     <string name="touch_cleaner">touch cleaner</string>
     <string name="clean_ram">clean ram</string>
+    <string name="examination_complete">examination complete</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -22,6 +22,12 @@ public abstract class BaseFragment extends Fragment {
     }
 
     /**
+     * 初始化布局
+     */
+    public abstract void initView();
+
+
+    /**
      * 初始化数据
      */
     public abstract void initData();

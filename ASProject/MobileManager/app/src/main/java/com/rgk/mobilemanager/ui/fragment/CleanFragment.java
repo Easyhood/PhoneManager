@@ -19,6 +19,7 @@ public class CleanFragment extends BaseFragment {
 
 
     private static LinearLayout llAdd;
+    private View view;
 
     public CleanFragment() {
         // Required empty public constructor
@@ -32,12 +33,15 @@ public class CleanFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_clean, container, false);
-        llAdd = (LinearLayout) view.findViewById(R.id.ll_add);
-        llAdd.removeAllViews();
+        view = inflater.inflate(R.layout.fragment_clean, container, false);
+        initView();
         return view;
     }
-
+    @Override
+    public void initView() {
+        llAdd = (LinearLayout) view.findViewById(R.id.ll_add);
+        llAdd.removeAllViews();
+    }
     @Override
     public void initData() {
 
