@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/whiteSmoke"
-    tools:context="com.rgk.mobilemanager.ui.fragment.CleanFragment">
+    tools:context="com.qingcheng.mobilemanager.ui.fragment.CleanFragment">
         <LinearLayout
             android:id="@+id/ll_add"
             android:orientation="vertical"

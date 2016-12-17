@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.rgk.mobilemanager.ui.fragment.HomeFragment">
+    tools:context="com.qingcheng.mobilemanager.ui.fragment.HomeFragment">
 
     <RelativeLayout
         android:id="@+id/rl_fragment_home"
@@ -36,10 +36,9 @@
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/circular_trans_layout">
-                <TextView
+                <com.qingcheng.mobilemanager.widget.RiseNumberTextView
                     android:id="@+id/tv_home_count"
                     android:layout_centerHorizontal="true"
-                    android:text="95"
                     android:textSize="75dp"
                     android:paddingTop="25dp"
                     android:textColor="@color/whiteSmoke"
@@ -49,7 +48,7 @@
                     android:id="@+id/tv_opt"
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/tv_home_count"
-                    android:text="@string/click_optimization"
+                    android:text="@string/on_examination"
                     android:textColor="@color/whiteSmoke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -61,7 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:layout_below="@+id/tv_opt"
+                    android:layout_below="@id/tv_opt"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
 

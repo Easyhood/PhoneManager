@@ -8,11 +8,11 @@
         android:layout_height="10dp"
         android:background="#cccccc"
         />
-    <com.rgk.mobilemanager.widget.TextLinear
+    <com.qingcheng.mobilemanager.widget.TextLinear
         android:id="@+id/tlPersion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.rgk.mobilemanager.widget.TextLinear>
+    </com.qingcheng.mobilemanager.widget.TextLinear>
 
 </LinearLayout>

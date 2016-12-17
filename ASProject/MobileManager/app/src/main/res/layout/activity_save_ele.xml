@@ -4,7 +4,7 @@
     android:id="@+id/activity_save_ele"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rgk.mobilemanager.ui.activity.SaveEleActivity">
+    tools:context="com.qingcheng.mobilemanager.ui.activity.SaveEleActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
