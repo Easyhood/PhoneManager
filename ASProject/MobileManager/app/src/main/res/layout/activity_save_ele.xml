@@ -33,7 +33,7 @@
                 android:paddingTop="7dp"
                 android:paddingLeft="10dp"
                 android:textColor="@color/whiteSmoke"
-                android:text="@string/save_electricity"/>
+                android:text="@string/intelligent_power_saving"/>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="wrap_content"

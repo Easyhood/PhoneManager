@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/rl_activity_rubbish"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/TC_green8">
         <RelativeLayout
             android:id="@+id/rl_rubbish_pre"
@@ -33,45 +33,42 @@
                 android:paddingTop="7dp"
                 android:paddingLeft="10dp"
                 android:textColor="@color/whiteSmoke"
-                android:text="@string/clean_rubbish"/>
+                android:text="@string/clean_ram"/>
         </RelativeLayout>
-
         <RelativeLayout
-            android:id="@+id/rl_rubbish_des"
+            android:id="@+id/white_bac_circular"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:background="@drawable/circular_bac_layout">
+            <ImageView
+                android:id="@+id/icon_app"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:id="@+id/name_app"
+                android:layout_below="@id/icon_app"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="微信"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_app_count"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/white_bac_circular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:padding="30dp">
-            <TextView
-                android:id="@+id/tv_rubbish_num"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="44.40"
-                android:textColor="@android:color/white"
-                android:textSize="60dp"/>
-            <TextView
-                android:id="@+id/tv_rubbish_large"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/tv_rubbish_num"
-                android:paddingTop="8dp"
-                android:paddingLeft="8dp"
-                android:textColor="@color/TC_gray4"
-                android:text="@string/traffic_kb"
-                android:textSize="15dp"/>
-            <TextView
-                android:id="@+id/tv_rubbish_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/tv_rubbish_num"
-                android:layout_below="@id/tv_rubbish_large"
-                android:paddingLeft="8dp"
-                android:paddingTop="20dp"
-                android:textColor="@color/TC_gray4"
-                android:text="@string/rubbish"/>
-        </RelativeLayout>
-
+            android:textSize="25dp"
+            android:textColor="@color/whiteSmoke"
+            android:text="1/2"/>
 
     </RelativeLayout>
     <LinearLayout

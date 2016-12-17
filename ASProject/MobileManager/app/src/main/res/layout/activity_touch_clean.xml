@@ -32,7 +32,7 @@
                 android:paddingTop="7dp"
                 android:paddingLeft="10dp"
                 android:textColor="@color/whiteSmoke"
-                android:text="@string/traffic_monitoring"/>
+                android:text="@string/touch_cleaner"/>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/rl_traffic_des"

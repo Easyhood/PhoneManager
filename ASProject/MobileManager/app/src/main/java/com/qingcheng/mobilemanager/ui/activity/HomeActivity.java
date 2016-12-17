@@ -88,7 +88,6 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
         shortCircular = findViewById(R.id.short_circular);
         rlTransDes = findViewById(R.id.rl_trans_des);
         if (mEvent == GlobalConstant.IN_THE_OPT_INT){
-             mEvent = GlobalConstant.OPT_IS_END_INT ;
             //不可点击
             rlTransDes.setClickable(false);
             llFragmentHome.setVisibility(View.INVISIBLE);
@@ -119,6 +118,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
                 public void run() {
                     SystemClock.sleep(2000);
                     EventBus.getDefault().post(new EventUtil(GlobalConstant.IN_THE_OPT_INT));
+                    mEvent = GlobalConstant.OPT_IS_END_INT;
                 }
             }.start();
 
@@ -199,7 +199,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
             anim.start();
 
             SlidingUtil.slideInToBottom(cleanView, cleanFrame, mHomeContainer);
-        }else {
+        }else if(mEvent == GlobalConstant.CHECK_IS_END){
             super.onBackPressed();
         }
     }
