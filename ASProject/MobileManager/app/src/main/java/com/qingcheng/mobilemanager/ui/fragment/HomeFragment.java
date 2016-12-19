@@ -79,6 +79,7 @@ public class HomeFragment extends BaseFragment {
         tvOpt = (TextView) view.findViewById(R.id.tv_opt);
         tvHomeCount = (RiseNumberTextView) view.findViewById(R.id.tv_home_count);
         rlTransDes = (RelativeLayout) view.findViewById(R.id.rl_trans_des);
+        tvOpt.setText(R.string.on_examination);
         Animation rotatingSelf = RotatingUtil.RotatingSelf(mActivity);
         if (rotatingSelf != null) {
             shortCircular.setAnimation(rotatingSelf);

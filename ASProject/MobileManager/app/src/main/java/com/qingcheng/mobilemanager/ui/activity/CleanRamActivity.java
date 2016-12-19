@@ -7,8 +7,6 @@ import android.widget.RelativeLayout;
 
 import com.qingcheng.mobilemanager.R;
 
-import static com.qingcheng.mobilemanager.ui.fragment.CleanFragment.pretView;
-
 /**
  * 垃圾清理activity
  */

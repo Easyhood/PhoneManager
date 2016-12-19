@@ -25,6 +25,7 @@ import com.qingcheng.mobilemanager.widget.RiseNumberTextView;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class HomeActivity extends BaseActivity implements CleanFragmentTouchListener{
 
@@ -33,7 +34,8 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
     private CleanFragment cleanFragment;
 
     private boolean cleanFragmentVisible;
-    private int mEvent = -1;
+    private int mEvent = GlobalConstant.FIRST_OPEN_INT;
+    private int mStatus = GlobalConstant.HOMEFRAG_IS_WORKING;
 
     private TextView tvOpt;
     private RelativeLayout rlFragmentHome;
@@ -87,7 +89,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
         longCircular = findViewById(R.id.long_circular);
         shortCircular = findViewById(R.id.short_circular);
         rlTransDes = findViewById(R.id.rl_trans_des);
-        if (mEvent == GlobalConstant.IN_THE_OPT_INT){
+         if (mEvent == GlobalConstant.IN_THE_OPT_INT){
             //不可点击
             rlTransDes.setClickable(false);
             llFragmentHome.setVisibility(View.INVISIBLE);
@@ -119,6 +121,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
                     SystemClock.sleep(2000);
                     EventBus.getDefault().post(new EventUtil(GlobalConstant.IN_THE_OPT_INT));
                     mEvent = GlobalConstant.OPT_IS_END_INT;
+                    mStatus = GlobalConstant.CLEANFRAG_IS_WORKING;
                 }
             }.start();
 
@@ -147,12 +150,13 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
      * 处理eventbus发送来的消息
      * @param event
      */
-    @Subscribe
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(EventUtil event){
         int msg = event.getIntMsg();
         switch (msg){
             case GlobalConstant.CHECK_IS_END:
                 mEvent = GlobalConstant.IN_THE_OPT_INT;
+                mStatus = GlobalConstant.HOMEFRAG_IS_WORKING;
                 break;
             case GlobalConstant.IN_THE_OPT_INT:
                 mActivity.runOnUiThread(new Runnable() {
@@ -200,6 +204,8 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
 
             SlidingUtil.slideInToBottom(cleanView, cleanFrame, mHomeContainer);
         }else if(mEvent == GlobalConstant.CHECK_IS_END){
+            super.onBackPressed();
+        }else if (mStatus == GlobalConstant.HOMEFRAG_IS_WORKING){
             super.onBackPressed();
         }
     }

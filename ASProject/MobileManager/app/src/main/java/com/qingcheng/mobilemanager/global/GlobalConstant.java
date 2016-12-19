@@ -35,9 +35,14 @@ public class GlobalConstant {
 
     //int消息队列
     public static final int FIRST_OPEN_INT = 1; //第一次打开App
-    public static final int CHECK_IS_END = 2; //检查结束
-    public static final int IN_THE_OPT_INT = 3; //正在优化中
-    public static final int OPT_IS_END_INT = 4; //优化结束
+    public static final int OPT_IS_PRE_INT = 2; //正在准备优化
+    public static final int CHECK_IS_END = 3; //检查结束
+    public static final int IN_THE_OPT_INT = 4; //正在优化中
+    public static final int OPT_IS_END_INT = 5; //优化结束
+
+    //标记Fragment状态
+    public static final int HOMEFRAG_IS_WORKING = 11;//正在homefragment中
+    public static final int CLEANFRAG_IS_WORKING = 12;//正在cleanfragment中
 
     //string消息队列
     public static final String CONFIG = "config";

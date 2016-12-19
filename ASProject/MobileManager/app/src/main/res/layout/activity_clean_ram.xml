@@ -5,78 +5,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.qingcheng.mobilemanager.ui.activity.CleanRamActivity">
+
+
     <RelativeLayout
         android:id="@+id/rl_activity_rubbish"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@color/TC_green8">
+
         <RelativeLayout
             android:id="@+id/rl_rubbish_pre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="10dp">
+
             <ImageView
                 android:id="@+id/iv_rubbish_pre"
-                android:src="@mipmap/pre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:paddingLeft="10dp"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"/>
+                android:layout_alignParentTop="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:src="@mipmap/pre" />
+
             <TextView
                 android:id="@+id/tv_rubbish_pre"
-                android:layout_toRightOf="@id/iv_rubbish_pre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="7dp"
+                android:layout_toRightOf="@id/iv_rubbish_pre"
                 android:paddingLeft="10dp"
-                android:textColor="@color/whiteSmoke"
-                android:text="@string/clean_ram"/>
+                android:paddingTop="7dp"
+                android:text="@string/clean_ram"
+                android:textColor="@color/whiteSmoke" />
+
         </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/white_bac_circular"
-            android:layout_marginTop="60dp"
-            android:layout_centerHorizontal="true"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:gravity="center"
-            android:background="@drawable/circular_bac_layout">
-            <ImageView
-                android:id="@+id/icon_app"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/circular_bac_layout"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/rl_app_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
-            <TextView
-                android:id="@+id/name_app"
-                android:layout_below="@id/icon_app"
-                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:text="微信"
+                android:layout_centerVertical="true"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/icon_app"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/name_app"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/icon_app"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="微信"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_clean_optimization_complete"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="invisible"
+                android:text="@string/complete"
+                android:textSize="39dp" />
+
         </RelativeLayout>
+
         <TextView
             android:id="@+id/tv_app_count"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:layout_below="@id/white_bac_circular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
+            android:layout_below="@id/white_bac_circular"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="1/2"
             android:textColor="@color/whiteSmoke"
-            android:text="1/2"/>
+            android:textSize="25dp" />
 
     </RelativeLayout>
-    <LinearLayout
-        android:id="@+id/ll_rubbish_activity_add"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_activity_rubbish"
-        android:orientation="vertical">
-    </LinearLayout>
 
 </RelativeLayout>
