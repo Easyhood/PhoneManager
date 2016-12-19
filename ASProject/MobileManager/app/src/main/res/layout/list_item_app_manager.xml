@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="25dp"
+    android:layout_centerVertical="true">
+    <ImageView
+        android:id="@+id/iv_app_icon"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_app_icon"
+        android:layout_centerVertical="true"
+        android:text="微信"
+        android:paddingLeft="18dp"
+        android:textSize="15dp"/>
+    <CheckBox
+        android:id="@+id/cb_app_unistall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

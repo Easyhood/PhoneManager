@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_traffic"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.qingcheng.mobilemanager.ui.activity.AppManagerActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/primary_dark">
+
+        <RelativeLayout
+            android:id="@+id/rl_traffic_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_traffic_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:src="@mipmap/pre" />
+
+            <TextView
+                android:id="@+id/tv_traffic_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/iv_traffic_pre"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="@string/home_return"
+                android:textColor="@color/whiteSmoke"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/app_manager_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/app_manager"
+            android:textColor="@color/whiteSmoke"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/check_all"
+            android:text="@string/check_all"
+            android:textSize="15dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/whiteSmoke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="20dp"/>
+
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/rl_app_display"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50.7dp"/>
+    <RelativeLayout
+        android:id="@+id/rl_uninstall"
+        android:layout_width="match_parent"
+        android:onClick="uninstall"
+        android:layout_height="50dp"
+        android:background="@drawable/tab_white_gray_selector"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@android:color/black"
+            android:text="@string/uninstall"/>
+
+    </RelativeLayout>
+</RelativeLayout>

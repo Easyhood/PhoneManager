@@ -34,7 +34,7 @@
         <activity android:name="com.qingcheng.mobilemanager.ui.activity.SaveEleActivity"
             android:theme="@style/RubbishAppTheme"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.qingcheng.mobilemanager.ui.activity.TouchCleanActivity"
+        <activity android:name="com.qingcheng.mobilemanager.ui.activity.AppManagerActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.qingcheng.mobilemanager.ui.activity.RightsActivity"
             android:theme="@style/RightsAppTheme"

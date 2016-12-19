@@ -18,6 +18,10 @@
     <string name="touch_cleaner">touch cleaner</string>
     <string name="clean_ram">clean ram</string>
     <string name="examination_complete">examination complete</string>
+    <string name="app_manager">app manager</string>
+    <string name="home_return">return</string>
+    <string name="check_all">check all</string>
+    <string name="uninstall">uninstall</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

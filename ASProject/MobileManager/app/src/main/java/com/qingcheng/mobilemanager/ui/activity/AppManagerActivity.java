@@ -10,14 +10,14 @@ import com.qingcheng.mobilemanager.R;
 /**
  * 流量监控activity
  */
-public class TouchCleanActivity extends BaseSonActivity {
+public class AppManagerActivity extends BaseSonActivity {
 
     private RelativeLayout rlTrafficPre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_touch_clean);
+        setContentView(R.layout.activity_app_manager);
         initView();
         preBack();
     }
@@ -41,6 +41,13 @@ public class TouchCleanActivity extends BaseSonActivity {
 
     @Override
     public void initData() {
+
+    }
+
+    /**
+     * 点击卸载键的逻辑
+     */
+    public void uninstall(){
 
     }
 }

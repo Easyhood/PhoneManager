@@ -18,7 +18,7 @@ import com.qingcheng.mobilemanager.global.GlobalConstant;
 import com.qingcheng.mobilemanager.ui.activity.CleanRamActivity;
 import com.qingcheng.mobilemanager.ui.activity.RightsActivity;
 import com.qingcheng.mobilemanager.ui.activity.SaveEleActivity;
-import com.qingcheng.mobilemanager.ui.activity.TouchCleanActivity;
+import com.qingcheng.mobilemanager.ui.activity.AppManagerActivity;
 import com.qingcheng.mobilemanager.utils.EventUtil;
 import com.qingcheng.mobilemanager.utils.PrefUtils;
 import com.qingcheng.mobilemanager.utils.RotatingUtil;
@@ -126,7 +126,7 @@ public class HomeFragment extends BaseFragment {
         homeTouch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mActivity, TouchCleanActivity.class);
+                Intent intent = new Intent(mActivity, AppManagerActivity.class);
                 startActivity(intent);
                 mActivity.finish();
             }
