@@ -64,7 +64,7 @@
 
     </RelativeLayout>
     <ListView
-        android:id="@+id/rl_app_display"
+        android:id="@+id/lv_app_display"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_toolbar"/>

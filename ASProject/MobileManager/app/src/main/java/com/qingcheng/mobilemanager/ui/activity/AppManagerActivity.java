@@ -3,6 +3,7 @@ package com.qingcheng.mobilemanager.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.qingcheng.mobilemanager.R;
@@ -13,6 +14,7 @@ import com.qingcheng.mobilemanager.R;
 public class AppManagerActivity extends BaseSonActivity {
 
     private RelativeLayout rlTrafficPre;
+    private ListView lvAppDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class AppManagerActivity extends BaseSonActivity {
     @Override
     public void initView() {
         rlTrafficPre = (RelativeLayout) findViewById(R.id.rl_traffic_pre);
+        lvAppDisplay = (ListView) findViewById(R.id.lv_app_display);
+
     }
 
     @Override
