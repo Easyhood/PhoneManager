@@ -3,8 +3,12 @@ package com.qingcheng.mobilemanager.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.qingcheng.mobilemanager.R;
+import com.qingcheng.mobilemanager.bean.AppInfo;
 import com.qingcheng.mobilemanager.holder.AppViewholder;
 
 import java.util.ArrayList;
@@ -17,24 +21,38 @@ import java.util.ArrayList;
  * Date       : 2016/12/20 17:07
  */
 
-public class AppManagerAdapter extends MyBaseAdapter {
+public class AppManagerAdapter extends MyBaseAdapter<AppInfo> {
 
-    public AppManagerAdapter(Context context, ArrayList dataList) {
+    private Context mContext;
+    private ArrayList<AppInfo> mDatas;
+    public AppManagerAdapter(Context context, ArrayList<AppInfo> dataList) {
         super(context, dataList);
+        this.mContext = context;
+        this.mDatas = dataList;
+    }
+
+    @Override
+    public AppInfo getItem(int position) {
+        return mDatas.get(position);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        AppViewholder holder = null;
-        if (holder == null){
-            convertView = inflater.inflate(R.layout.list_item_app_manager,null);
+        AppViewholder holder ;
+        if (convertView == null){
+            convertView = View.inflate(mContext,R.layout.list_item_app_manager,null);
             holder = new AppViewholder();
 
-            holder.initView();
+            holder.ivAppIcon = (ImageView)convertView.findViewById(R.id.iv_app_icon);
+            holder.tvAppName = (TextView) convertView.findViewById(R.id.tv_app_name);
+            holder.cbAppUninstall = (CheckBox) convertView.findViewById(R.id.cb_app_uninstall);
             convertView.setTag(holder);
         }else{
             holder = (AppViewholder) convertView.getTag();
         }
+        AppInfo info = getItem(position);
+        holder.ivAppIcon.setImageDrawable(info.appIcon);
+        holder.tvAppName.setText(info.appName);
         return convertView;
     }
 }

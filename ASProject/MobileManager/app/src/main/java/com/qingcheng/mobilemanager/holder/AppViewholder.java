@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.qingcheng.mobilemanager.R;
+import com.qingcheng.mobilemanager.bean.AppInfo;
 import com.qingcheng.mobilemanager.utils.UiUtils;
 
 /**
@@ -16,11 +17,11 @@ import com.qingcheng.mobilemanager.utils.UiUtils;
  * Date       : 2016/12/20 16:56
  */
 
-public class AppViewholder<AppInfo> extends BaseHolder {
+public class AppViewholder extends BaseHolder<AppInfo> {
 
-    private ImageView ivAppIcon;
-    private TextView tvAppName;
-    private CheckBox cbAppUninstall;
+    public ImageView ivAppIcon;
+    public TextView tvAppName;
+    public CheckBox cbAppUninstall;
 
     @Override
     public View initView() {
@@ -33,7 +34,8 @@ public class AppViewholder<AppInfo> extends BaseHolder {
     }
 
     @Override
-    public void setData(Object data) {
+    public void setData(AppInfo data) {
         super.setData(data);
+        tvAppName.setText(mData.appName);
     }
 }
