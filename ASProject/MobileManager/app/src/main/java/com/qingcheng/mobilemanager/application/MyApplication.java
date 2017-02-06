@@ -21,7 +21,6 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         context = getApplicationContext();
         handler = new Handler();
         mainThreadId = android.os.Process.myTid();

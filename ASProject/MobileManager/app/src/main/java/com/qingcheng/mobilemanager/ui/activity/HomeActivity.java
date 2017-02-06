@@ -150,7 +150,7 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
      * 处理eventbus发送来的消息
      * @param event
      */
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe
     public void onEvent(EventUtil event){
         int msg = event.getIntMsg();
         switch (msg){
