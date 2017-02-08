@@ -1,7 +1,10 @@
 package com.qingcheng.mobilemanager.ui.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -15,23 +18,52 @@ import android.widget.TextView;
 import com.qingcheng.mobilemanager.Listeners.CleanFragmentTouchListener;
 import com.qingcheng.mobilemanager.R;
 import com.qingcheng.mobilemanager.global.GlobalConstant;
+import com.qingcheng.mobilemanager.ui.activity.AppManagerActivity;
 import com.qingcheng.mobilemanager.ui.activity.CleanRamActivity;
+import com.qingcheng.mobilemanager.ui.activity.HomeActivity;
 import com.qingcheng.mobilemanager.ui.activity.RightsActivity;
 import com.qingcheng.mobilemanager.ui.activity.SaveEleActivity;
-import com.qingcheng.mobilemanager.ui.activity.AppManagerActivity;
 import com.qingcheng.mobilemanager.utils.EventUtil;
 import com.qingcheng.mobilemanager.utils.PrefUtils;
 import com.qingcheng.mobilemanager.utils.RotatingUtil;
 import com.qingcheng.mobilemanager.widget.RiseNumberTextView;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
+import java.io.Serializable;
 
 /**
  * 主页fragment
  */
 public class HomeFragment extends BaseFragment {
+    private Handler mHandler;
+    private Handler fragHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Bundle data = msg.getData();
+            EventUtil event = (EventUtil)data.getSerializable(GlobalConstant.KEY);
+            int intMsg = event.getIntMsg();
+            switch (intMsg){
+                case GlobalConstant.FIRST_OPEN_INT:
+                    Log.e("---HomeFragment---","接收到了"+ GlobalConstant.FIRST_OPEN_INT +"消息");
+
+                    mActivity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            firstOpenEvent();
+                        }
+                    });
+                    break;
+                case GlobalConstant.CHECK_IS_END:
+                    mActivity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            checkEnd();
+                        }
+                    });
+                    break;
+            }
+        }
+    };
 
     private CleanFragmentTouchListener touchListener;
     private View shortCircular;
@@ -54,13 +86,16 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventBus.getDefault().register(this);
+
+    }
+
+    public void setHandler(Handler mHandler) {
+        this.mHandler = mHandler;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 
     @Nullable
@@ -198,7 +233,16 @@ public class HomeFragment extends BaseFragment {
                     });
                     SystemClock.sleep(GlobalConstant.MAX_CHECK_TIME);
                 }
-                EventBus.getDefault().post(new EventUtil(GlobalConstant.CHECK_IS_END));
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(GlobalConstant.KEY,new EventUtil(GlobalConstant.CHECK_IS_END));
+
+                Message message = new Message();
+                message.setData(bundle);
+                fragHandler.sendMessage(message);
+
+                Message mMessage = new Message();
+                mMessage.setData(bundle);
+                mHandler.sendMessage(mMessage);
             }
         }.start();
 
@@ -224,41 +268,19 @@ public class HomeFragment extends BaseFragment {
         boolean isOpened = PrefUtils.getBoolean(mActivity, GlobalConstant.FIRST_OPEN_STRING, false);
         Log.e("------HomeFragment-----","isOpened : "+ isOpened);
         if (!isOpened){
-            EventBus.getDefault().post(new EventUtil(GlobalConstant.FIRST_OPEN_INT));
+
+            Message message = new Message();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(GlobalConstant.KEY,new EventUtil(GlobalConstant.FIRST_OPEN_INT));
+            message.setData(bundle);
+            fragHandler.sendMessage(message);
+
             Log.e("-----HomeFragment------","发送了 "+GlobalConstant.FIRST_OPEN_INT+" 消息");
             //标记已打开过App
             PrefUtils.putBoolean(mActivity,GlobalConstant.FIRST_OPEN_STRING,true);
         }
     }
 
-    /**
-     * 处理eventbus发送来的事件
-     * @param event
-     */
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEventMainThread(EventUtil event){
-        int msg = event.getIntMsg();
-        switch (msg){
-            case GlobalConstant.FIRST_OPEN_INT:
-                Log.e("---HomeFragment---","接收到了"+ GlobalConstant.FIRST_OPEN_INT +"消息");
-
-                mActivity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        firstOpenEvent();
-                    }
-                });
-                break;
-            case GlobalConstant.CHECK_IS_END:
-                mActivity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        checkEnd();
-                    }
-                });
-                break;
-        }
-    }
 }
 
 

@@ -47,6 +47,7 @@ public class GlobalConstant {
     //string消息队列
     public static final String CONFIG = "config";
     public static final String FIRST_OPEN_STRING = "first open"; //第一次打开
+    public static final String KEY = "key";
 
     //检查标记得分
     public static float FIRST_NUMBER = 0 ; //初始得分

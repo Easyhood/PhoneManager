@@ -3,6 +3,8 @@ package com.qingcheng.mobilemanager.ui.activity;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
@@ -23,11 +25,38 @@ import com.qingcheng.mobilemanager.utils.RotatingUtil;
 import com.qingcheng.mobilemanager.utils.SlidingUtil;
 import com.qingcheng.mobilemanager.widget.RiseNumberTextView;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
 public class HomeActivity extends BaseActivity implements CleanFragmentTouchListener{
+
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Bundle data = msg.getData();
+            EventUtil event = (EventUtil)data.getSerializable(GlobalConstant.KEY);
+            int intMsg = event.getIntMsg();
+            switch (intMsg){
+                case GlobalConstant.CHECK_IS_END:
+                    mEvent = GlobalConstant.IN_THE_OPT_INT;
+                    mStatus = GlobalConstant.HOMEFRAG_IS_WORKING;
+                    break;
+                case GlobalConstant.IN_THE_OPT_INT:
+                    mActivity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //大圈圈显示，小圈圈开始转至停
+                            longCircular.setVisibility(View.VISIBLE);
+                            shortCircular.clearAnimation();
+                            //显示优化完毕 点击返回字样
+                            tvOpt.setText(R.string.optimization_complete);
+                            tvHomeReturn.setVisibility(View.VISIBLE);
+                            //可以点击
+                            rlTransDes.setClickable(true);
+                        }
+                    });
+                    break;
+            }
+        }
+    };
 
     private FrameLayout mHomeContainer;
     private HomeFragment homeFragment;
@@ -57,22 +86,22 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        EventBus.getDefault().register(this);
         mHomeContainer = (FrameLayout) findViewById(R.id.home_container);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         homeFragment = new HomeFragment();
         homeFragment.setCleanFragmentTouchListener(this);
         fragmentManager.beginTransaction().replace(R.id.home_fragment,homeFragment).commit();
+        homeFragment.setHandler(mHandler);
 
         cleanFragment = new CleanFragment();
         fragmentManager.beginTransaction().replace(R.id.clean_fragment,cleanFragment).commit();
     }
 
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -119,7 +148,13 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
                 @Override
                 public void run() {
                     SystemClock.sleep(2000);
-                    EventBus.getDefault().post(new EventUtil(GlobalConstant.IN_THE_OPT_INT));
+                    Message message = new Message();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable(GlobalConstant.KEY,new EventUtil(GlobalConstant.IN_THE_OPT_INT));
+                    message.setData(bundle);
+                    mHandler.sendMessage(message);
+
+
                     mEvent = GlobalConstant.OPT_IS_END_INT;
                     mStatus = GlobalConstant.CLEANFRAG_IS_WORKING;
                 }
@@ -146,35 +181,6 @@ public class HomeActivity extends BaseActivity implements CleanFragmentTouchList
     }
 
 
-    /**
-     * 处理eventbus发送来的消息
-     * @param event
-     */
-    @Subscribe
-    public void onEvent(EventUtil event){
-        int msg = event.getIntMsg();
-        switch (msg){
-            case GlobalConstant.CHECK_IS_END:
-                mEvent = GlobalConstant.IN_THE_OPT_INT;
-                mStatus = GlobalConstant.HOMEFRAG_IS_WORKING;
-                break;
-            case GlobalConstant.IN_THE_OPT_INT:
-                mActivity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        //大圈圈显示，小圈圈开始转至停
-                        longCircular.setVisibility(View.VISIBLE);
-                        shortCircular.clearAnimation();
-                        //显示优化完毕 点击返回字样
-                        tvOpt.setText(R.string.optimization_complete);
-                        tvHomeReturn.setVisibility(View.VISIBLE);
-                        //可以点击
-                        rlTransDes.setClickable(true);
-                    }
-                });
-                break;
-        }
-    }
 
     /**
      * 重写返回键

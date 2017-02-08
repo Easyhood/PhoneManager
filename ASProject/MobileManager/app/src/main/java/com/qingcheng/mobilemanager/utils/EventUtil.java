@@ -1,5 +1,7 @@
 package com.qingcheng.mobilemanager.utils;
 
+import java.io.Serializable;
+
 /**
  * Description:
  * Copyright  : Copyright (c) 2016
@@ -8,7 +10,7 @@ package com.qingcheng.mobilemanager.utils;
  * Date       : 2016/11/28 17:40
  */
 
-public class EventUtil {
+public class EventUtil implements Serializable{
 
     private String strMsg;
     private int intMsg;
