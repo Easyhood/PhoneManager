@@ -22,7 +22,7 @@
     <string name="home_return">return</string>
     <string name="check_all">check all</string>
     <string name="uninstall">uninstall</string>
-
+    <string name="without_checked_app">without any checked app</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

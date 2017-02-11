@@ -18,6 +18,7 @@ public class AppInfo {
 
     public boolean isUserApp;//true表示用户应用，false表示是系统应用
 
+
     @Override
     public int hashCode() {
         return super.hashCode();

@@ -2,6 +2,7 @@ package com.qingcheng.mobilemanager.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +17,7 @@ import com.qingcheng.mobilemanager.engine.AppInfoProvider;
 import com.qingcheng.mobilemanager.utils.ToastUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -29,8 +31,10 @@ public class AppManagerActivity extends BaseSonActivity{
     private Context context = this;
     private RelativeLayout rlUninstall;
     private AppManagerAdapter mAdapter;
-    private AppInfo mCurrentCliclAppInfo;  //当前被点击info
+    private boolean checkedAll = false;
+    private List<AppInfo> mCurrentCheckedAppInfo = new ArrayList<AppInfo>();  //当前被选中info的集合
     private TextView tvCheckAll;
+    private List<Integer> listItemID = new ArrayList<Integer>();//被选中应用的position的集合
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +78,20 @@ public class AppManagerActivity extends BaseSonActivity{
         tvCheckAll.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.showToast(context,"全选被点击");
+                if (!checkedAll){
+                    for (int i = 0; i < mDatas.size(); i++){
+                      mAdapter.mChecked.add(i,true);
+                    }
+                    checkedAll = true;
+                    mAdapter.notifyDataSetChanged();
+                }else{
+                    for (int i = 0; i < mDatas.size(); i++){
+                        mAdapter.mChecked.add(i,false);
+                    }
+                    checkedAll = false;
+                    mAdapter.notifyDataSetChanged();
+                }
+
             }
         });
     }
@@ -109,7 +126,37 @@ public class AppManagerActivity extends BaseSonActivity{
      * 点击卸载的方法
      */
     public void uninstall(){
-        ToastUtils.showToast(context,"卸载被点击");
+        listItemID.clear();
+        mCurrentCheckedAppInfo.clear();
+        try{
+            for (int i = 0;i< mAdapter.mChecked.size();i++){
+                if (mAdapter.mChecked.get(i)){
+                    listItemID.add(i);
+                    mCurrentCheckedAppInfo.add(mDatas.get(i));
+                }
+            }
+        }catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
+            ToastUtils.showIntToast(context,R.string.without_checked_app);
+        }
+
+        if (listItemID.size() == 0){
+            ToastUtils.showIntToast(context,R.string.without_checked_app);
+        } else {
+            for (int i = 0; i < mCurrentCheckedAppInfo.size(); i++){
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_DELETE);
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                intent.setData(Uri.parse("package:" + mCurrentCheckedAppInfo.get(i).packageName));
+                startActivityForResult(intent,0);
+            }
+        }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        mAdapter.notifyDataSetChanged();
+        initView();
+    }
 }

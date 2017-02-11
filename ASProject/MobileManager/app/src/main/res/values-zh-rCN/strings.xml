@@ -22,4 +22,5 @@
     <string name="home_return">返回</string>
     <string name="check_all">全选</string>
     <string name="uninstall">卸载</string>
+    <string name="without_checked_app">没有选中任何应用</string>
 </resources>
