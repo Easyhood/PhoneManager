@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import com.qingcheng.mobilemanager.R;
 import com.qingcheng.mobilemanager.adapter.AppManagerAdapter;
 import com.qingcheng.mobilemanager.bean.AppInfo;
 import com.qingcheng.mobilemanager.engine.AppInfoProvider;
+import com.qingcheng.mobilemanager.holder.AppViewholder;
 import com.qingcheng.mobilemanager.utils.ToastUtils;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import java.util.List;
 
 
 /**
- * 流量监控activity
+ * 应用管理的activity
  */
 public class AppManagerActivity extends BaseSonActivity{
 
@@ -43,7 +45,6 @@ public class AppManagerActivity extends BaseSonActivity{
         initView();
         preBack();
     }
-
     @Override
     public void initView() {
         rlTrafficPre = (RelativeLayout) findViewById(R.id.rl_traffic_pre);
@@ -80,18 +81,32 @@ public class AppManagerActivity extends BaseSonActivity{
             public void onClick(View v) {
                 if (!checkedAll){
                     for (int i = 0; i < mDatas.size(); i++){
-                      mAdapter.mChecked.add(i,true);
+                      mAdapter.mChecked.set(i,true);
                     }
                     checkedAll = true;
                     mAdapter.notifyDataSetChanged();
                 }else{
                     for (int i = 0; i < mDatas.size(); i++){
-                        mAdapter.mChecked.add(i,false);
+                        mAdapter.mChecked.set(i,false);
                     }
                     checkedAll = false;
                     mAdapter.notifyDataSetChanged();
                 }
 
+            }
+        });
+        /**
+         * 每个item被点击监听
+         */
+        lvAppDisplay.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (mAdapter.mChecked.get(position)){
+                    mAdapter.mChecked.set(position,false);
+                }else if (!mAdapter.mChecked.get(position)){
+                    mAdapter.mChecked.set(position,true);
+                }
+                mAdapter.notifyDataSetChanged();
             }
         });
     }

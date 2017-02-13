@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,7 +50,6 @@ public class AppManagerAdapter extends MyBaseAdapter<AppInfo> {
         if (convertView == null){
             convertView = View.inflate(mContext,R.layout.list_item_app_manager,null);
             holder = new AppViewholder();
-
             holder.ivAppIcon = (ImageView)convertView.findViewById(R.id.iv_app_icon);
             holder.tvAppName = (TextView) convertView.findViewById(R.id.tv_app_name);
             holder.cbAppUninstall = (CheckBox) convertView.findViewById(R.id.cb_app_uninstall);
@@ -59,35 +57,9 @@ public class AppManagerAdapter extends MyBaseAdapter<AppInfo> {
         }else{
             holder = (AppViewholder) convertView.getTag();
         }
-        //监听被取消
-        View.OnClickListener ocl=new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if(!((CheckBox) v).isChecked()){
-                   mChecked.set(position,!((CheckBox) v).isChecked());
-
-                }
-            }
-        };
-        //监听选中
-        CompoundButton.OnCheckedChangeListener occl = new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if(isChecked){
-                   CheckBox cb = (CheckBox) buttonView;
-                   mChecked.set(position,cb.isChecked());
-                }
-            }
-        };
-
         AppInfo info = getItem(position);
         holder.ivAppIcon.setImageDrawable(info.appIcon);
         holder.tvAppName.setText(info.appName);
-        holder.cbAppUninstall.setOnClickListener(ocl);
-        holder.cbAppUninstall.setOnCheckedChangeListener(occl);
         holder.cbAppUninstall.setChecked(mChecked.get(position));
         return convertView;
     }
